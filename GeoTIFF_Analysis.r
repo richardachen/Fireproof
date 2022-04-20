@@ -4,6 +4,7 @@ pacman::p_load(pacman, dplyr, raster, sf, rgdal, rasterVis, ggplot2)
 lfmc <- raster("Downloading GeoTIFF/Extracted Files/lfmc/lfmc_map_2018-11-01.tif")
 lfmc_df <- rasterToPoints(lfmc) %>% 
            data.frame()
+lfmc
 wind <- raster("Downloading GeoTIFF/Extracted Files/wind/my_export_la_20181101.tif")
 wind_df <- rasterToPoints(wind) %>%
            data.frame()
