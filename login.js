@@ -21,6 +21,9 @@ const app = initializeApp(firebaseConfig);
 	const login    = document.getElementById('login');
 	const signup   = document.getElementById('signup');
 	const logout   = document.getElementById('logout');
+	const lon = document.getElementById('lon');
+	const lat = document.getElementById('lat');
+	const enter = document.getElementById('enter');
 
 	// login
 	login.addEventListener('click', e => {
@@ -41,6 +44,19 @@ const app = initializeApp(firebaseConfig);
 	logout.addEventListener('click', e => {
 		firebase.auth().signOut();
 	});
+
+	// writing longitude and latitude
+	enter.addEventListener('click', e => {
+		status.innerHTML = '';
+		db.collection("locations").add({
+			lon = lon.value,
+			lat = lat.value
+		})
+		.then(function(docRef) {
+			console.log("Document written with ID: " + docRef.id);
+			status.innerHTML += 'Document written with ID: ${docRef.id}';
+		})
+	})
 
     // login state
 	firebase.auth().onAuthStateChanged(firebaseUser => {
