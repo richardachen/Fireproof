@@ -10,10 +10,12 @@
     appId: "1:931063529762:web:3d580d8a061008934aa57b"
     };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+	// // Initialize Firebase
+	// const app = initializeApp(firebaseConfig);
 	// Initialize Firebase
 	firebase.initializeApp(firebaseConfig);
+
+	var db = firebase.firestore();
 
 	// get elements
 	const email    = document.getElementById('email');

@@ -5,7 +5,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>  
      <!--https://stackoverflow.com/questions/69570270/it-show-uncaught-referenceerror-initializeapp-is-not-defined  -->
-    <script src="httpS://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -62,9 +62,19 @@
       </label>
     </div> -->
     <button class="w-100 btn btn-lg btn-primary" type="submit" id="signup">Sign Up</button>
-    <button class="w-100 btn btn-lg btn-primary" type="submit" id="signin">Sign in</button>
+    <button class="w-100 btn btn-lg btn-primary" type="submit" id="login">Sign in</button>
     <button class="w-100 btn btn-lg btn-primary" type="submit" id="logout">Log Out</button>
-    <button class="w-100 btn btn-lg btn-primary" id="linked">Next Page</button>
+    <button class="w-100 btn btn-lg btn-primary" type="submit" id="linked">Next Page</button>
+
+    <div class="form-floating">
+      <input type="number" step="0.0001" class="form-control" id="lon" placeholder="0" value="">
+      <label for="longitude">Longitude</label>
+    </div>
+    <div class="form-floating">
+      <input type="number" step="0.0001" class="form-control" id="lon" placeholder="0" value="">
+      <label for="latitude">Latitude</label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" id="enter">Enter Location</button>
     <!-- <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p> -->
   </form>
 </main>
