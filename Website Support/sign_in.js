@@ -30,6 +30,7 @@
 
 	// login
 	login.addEventListener('click', e => {
+		console.log('Here');
 		const auth  = firebase.auth();		
 		const promise = auth.signInWithEmailAndPassword(email.value, password.value);
 		promise.catch(e => console.log(e.message));
@@ -56,6 +57,7 @@
 
 	// writing longitude and latitude
 	enter.addEventListener('click', e => {
+		console.log('Here');
 		status.innerHTML = '';
 		db.collection("locations").add({
 			lon: lon.value, 
@@ -63,7 +65,7 @@
 		})
 		.then(function(docRef) {
 			console.log("Document written with ID: " + docRef.id);
-			status.innerHTML += 'Document written with ID: ${docRef.id}';
+		status.innerHTML += 'Document written with ID: ${docRef.id}';
 		})
 	})
 

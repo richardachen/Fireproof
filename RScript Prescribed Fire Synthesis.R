@@ -34,4 +34,7 @@ surface_wind_tf <- overlay(surface_wind, surface_wind_lwr_bd, surface_wind_upr_b
 high_wind_tf <- overlay(high_wind, high_wind_lwr_bd, high_wind_upr_bd, fun = within_bounds)
 overall_value <- temp_tf + overall_humidity_tf + surface_wind_tf + high_wind_tf
 overall_value_df <- rasterToPoints(overall_value) %>% data.frame()
+overall_value
+png("testimg.png", 1370, 988)
 ggplot() + geom_raster(data = overall_value_df, aes(x = x, y = y, fill = layer)) + scale_fill_gradientn(name = "Optimality of Weather Conditions for Prescribed Burn", colors = c("red", "green")) + ggtitle("Estimated Favorability of Weather Conditions for a Prescribed Burn") + coord_equal()
+dev.off()
