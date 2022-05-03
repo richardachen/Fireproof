@@ -3,7 +3,9 @@
   <head>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>    
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>  
+     <!--https://stackoverflow.com/questions/69570270/it-show-uncaught-referenceerror-initializeapp-is-not-defined  -->
+    <script src="httpS://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -62,11 +64,12 @@
     <button class="w-100 btn btn-lg btn-primary" type="submit" id="signup">Sign Up</button>
     <button class="w-100 btn btn-lg btn-primary" type="submit" id="signin">Sign in</button>
     <button class="w-100 btn btn-lg btn-primary" type="submit" id="logout">Log Out</button>
+    <button class="w-100 btn btn-lg btn-primary" id="linked">Next Page</button>
     <!-- <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p> -->
   </form>
 </main>
 
-<script src="login.js"></script>
+<script src="sign_in.js"></script>
     
   </body>
 </html>

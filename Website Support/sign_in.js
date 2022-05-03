@@ -21,6 +21,7 @@ const app = initializeApp(firebaseConfig);
 	const login    = document.getElementById('login');
 	const signup   = document.getElementById('signup');
 	const logout   = document.getElementById('logout');
+	const linked   = document.getElementById('linked');	
 	const lon = document.getElementById('lon');
 	const lat = document.getElementById('lat');
 	const enter = document.getElementById('enter');
@@ -45,12 +46,18 @@ const app = initializeApp(firebaseConfig);
 		firebase.auth().signOut();
 	});
 
+	// go to the next page
+	linked.addEventListener('click', e => {
+		console.log('did something');
+		window.location.href = "Main Page.html";
+	})
+
 	// writing longitude and latitude
 	enter.addEventListener('click', e => {
 		status.innerHTML = '';
 		db.collection("locations").add({
-			lon = lon.value,
-			lat = lat.value
+			lon: lon.value, 
+			lat: lat.value
 		})
 		.then(function(docRef) {
 			console.log("Document written with ID: " + docRef.id);
