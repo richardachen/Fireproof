@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -9,8 +12,6 @@
     <title>Signin Template · Bootstrap v5.1</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
-
-    
 
     <!-- Bootstrap core CSS -->
 <link href="dist/css/bootstrap.min.css" rel="stylesheet">
@@ -42,7 +43,7 @@
     <!-- gotta replace this image -->
     <!-- this image is 179 by 202 -->
     <img class="mb-4" src="Fireproof_Logo.png" alt="" width="90" height="101.56">
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    <!-- <h1 class="h3 mb-3 fw-normal">Please sign in</h1> -->
 
     <div class="form-floating">
       <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
@@ -53,17 +54,19 @@
       <label for="floatingPassword">Password</label>
     </div>
 
-    <div class="checkbox mb-3">
+    <!-- <div class="checkbox mb-3">
       <label>
         <input type="checkbox" value="remember-me"> Remember me
       </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+    </div> -->
+    <button class="w-100 btn btn-lg btn-primary" type="submit" id="signup">Sign Up</button>
+    <button class="w-100 btn btn-lg btn-primary" type="submit" id="signin">Sign in</button>
+    <button class="w-100 btn btn-lg btn-primary" type="submit" id="logout">Log Out</button>
+    <!-- <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p> -->
   </form>
 </main>
 
-
+<script src="login.js"></script>
     
   </body>
 </html>
