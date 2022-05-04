@@ -1,4 +1,6 @@
+
 (function(){
+	import { doc, getDoc } from "firebase/firestore";
 
     // Your web app's Firebase configuration
     const firebaseConfig = {
@@ -23,10 +25,22 @@
 	const login    = document.getElementById('login');
 	const signup   = document.getElementById('signup');
 	const logout   = document.getElementById('logout');
-	const linked   = document.getElementById('linked');	
 	const lon = document.getElementById('lon');
 	const lat = document.getElementById('lat');
 	const enter = document.getElementById('enter');
+
+
+	const docRef = doc(db, "cities", "SF");
+	const docSnap = await getDoc(docRef);
+
+	// not sure if this works?
+	if (docSnap.exists()) {
+	console.log("Document data:", docSnap.data());
+	} else {
+	// doc.data() will be undefined in this case
+	console.log("No such document!");
+	}
+	// hmmmmm
 
 	// login
 	login.addEventListener('click', e => {
@@ -48,12 +62,6 @@
 	logout.addEventListener('click', e => {
 		firebase.auth().signOut();
 	});
-
-	// go to the next page
-	linked.addEventListener('click', e => {
-		console.log('did something');
-		window.location.href = "Main Page.html";
-	})
 
 	// writing longitude and latitude
 	enter.addEventListener('click', e => {
