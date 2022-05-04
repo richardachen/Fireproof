@@ -1,6 +1,6 @@
 
 (function(){
-	import { doc, getDoc } from "firebase/firestore";
+	// import { doc, getDoc } from "firebase/firestore";
 
     // Your web app's Firebase configuration
     const firebaseConfig = {
@@ -18,6 +18,7 @@
 	firebase.initializeApp(firebaseConfig);
 
 	var db = firebase.firestore();
+	var uid;
 
 	// get elements
 	const email    = document.getElementById('email');
@@ -30,16 +31,16 @@
 	const enter = document.getElementById('enter');
 
 
-	const docRef = doc(db, "locations");
-	const docSnap = await getDoc(docRef);
+	// const docRef = doc(db, "locations");
+	// const docSnap = await getDoc(docRef);
 
 	// not sure if this works?
-	if (docSnap.exists()) {
-	console.log("Document data:", docSnap.data());
-	} else {
-	// doc.data() will be undefined in this case
-	console.log("No such document!");
-	}
+	// if (docSnap.exists()) {
+	// console.log("Document data:", docSnap.data());
+	// } else {
+	// // doc.data() will be undefined in this case
+	// console.log("No such document!");
+	// }
 	// hmmmmm
 
 	// login
@@ -69,7 +70,8 @@
 		status.innerHTML = '';
 		db.collection("locations").add({
 			lon: lon.value, 
-			lat: lat.value
+			lat: lat.value,
+			user: uid
 		})
 		.then(function(docRef) {
 			console.log("Document written with ID: " + docRef.id);
@@ -80,7 +82,8 @@
     // login state
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 		if(firebaseUser){
-			console.log(firebaseUser);
+			console.log(firebaseUser.uid);
+			uid = firebaseUser.uid;
 			logout.style.display = 'inline';
 			login.style.display  = 'none';
 			signup.style.display = 'none';

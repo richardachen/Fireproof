@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>  
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script> 
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -38,6 +42,7 @@
     
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
+    <!-- <link href="signin.css" rel="stylesheet"> -->
 
     <!-- leaflet css & javascript -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
@@ -63,6 +68,44 @@
   </header>
 
   <main>
+
+    <div>
+      <!-- <input type="email" class="form-control" id="email" placeholder="name@example.com" value=""> -->
+      <input type="email" id="email" placeholder="name@example.com" value="">
+      <label for="email">Email address</label>
+    </div>
+    <br>
+    <div>
+      <!-- <input type="password" class="form-control" id="password" placeholder="Password" value=""> -->
+      <input type="password" id="password" placeholder="Password" value="">
+      <label for="password">Password</label>
+    </div>
+    <br>
+
+    <!-- <button class="w-100 btn btn-lg btn-primary" type="submit" id="signup">Sign Up</button><br> -->
+    <button type="submit" id="signup">Sign Up</button>
+    <!-- <button class="w-100 btn btn-lg btn-primary" type="submit" id="login">Sign in</button><br> -->
+    <button type="submit" id="login">Sign in</button>
+    <button type="submit" id="logout">Log Out</button>
+    <!-- <button class="w-100 btn btn-lg btn-primary" type="submit" id="logout">Log Out</button><br> -->
+
+    <!-- <div class="form-floating"> -->
+    <div>
+      <!-- <input type="number" step="0.0001" class="form-control" id="lon" placeholder="0" value=""> -->
+      <input type="number" step="0.0001" id="lon" placeholder="0">
+      <label for="longitude">Longitude</label>
+    </div>
+    <br>
+    <!-- <div class="form-floating"> -->
+    <div>
+      <!-- <input type="number" step="0.0001" class="form-control" id="lat" placeholder="0" value=""> -->
+      <input type="number" step="0.0001" id="lat" placeholder="0" value="">
+      <label for="latitude">Latitude</label>
+    </div>
+    <br>
+    <!-- <button class="w-100 btn btn-lg btn-primary" id="enter">Enter Location</button><br> -->
+    <button id="enter">Enter Location</button>
+
     <h1>Map Display:</h1>
     <!-- <p class="fs-5 col-md-8">Quickly and easily get started with Bootstrap's compiled, production-ready files with this barebones example featuring some basic HTML and helpful links. Download all our examples to get started.</p> -->
     <div id="map"></div>
@@ -108,6 +151,7 @@
 
     <script src="dist/js/bootstrap.bundle.min.js"></script>
     <script src="mainpage.js"></script>
-      
+    <script src="sign_in.js"></script>      
+
   </body>
 </html>
