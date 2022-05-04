@@ -30,7 +30,7 @@
 	const enter = document.getElementById('enter');
 
 
-	const docRef = doc(db, "cities", "SF");
+	const docRef = doc(db, "locations");
 	const docSnap = await getDoc(docRef);
 
 	// not sure if this works?
